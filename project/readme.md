@@ -8,7 +8,7 @@ Project work plan:
   3.1 - clustering.  
   3.2 - pattern mining.  
 4 - Classification.  
-  4.1 - train and test sets.  
+  4.1 - training strategy.  
   4.2 - knn.  
   4.3 - naive bayes.  
   4.4 - decision trees.  
