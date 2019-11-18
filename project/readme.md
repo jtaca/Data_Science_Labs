@@ -5,6 +5,10 @@ this is the folder for the project.
 Project work plan:
 
 1 - :construction: Description.  
+1.1 - :&#10003; datasets description.  
+1.2 - :construction: statistical analysis. 
+1.2.1 - :construction: variables correlation. 
+1.2.2 - :construction: histograms. 
 2 - :construction: Preprocessing.  
 3 - :construction: Unsupervised Learning.  
   3.1 - :construction: clustering.  
@@ -20,4 +24,6 @@ Project work plan:
 João Aparicio: 4.3, 4.5, 4.6.  
 Carlos Macedo: 4.2, 3.2.  
 João Saramago: 3.1, 4.4.  
-All: 1, 2, 4.1.    
+All: 1, 2, 4.1. 
+
+
