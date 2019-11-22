@@ -1,0 +1,3 @@
+#!/bin/sh
+ /home/debian/miniconda3/bin/python main.py
+
