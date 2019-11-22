@@ -1,12 +1,16 @@
 import sys, pandas as pd
-from preprocessing import preprocessing_pd_report
+from preprocessing_pd import preprocessing_pd_report
+from preprocessing_ct import preprocessing_ct_report
 
 def report(source, dataframe, task):
     task = task.strip()
     if task == "preprocessing":
-        return preprocessing_pd_report(dataframe)
-    else:
-        return "Not yet available."
+        if source == "PD":
+            return preprocessing_pd_report(dataframe)
+        if source == "CT":
+            return preprocessing_ct_report(dataframe)
+    
+    return "Not yet available."
 
 if __name__ == '__main__':
 

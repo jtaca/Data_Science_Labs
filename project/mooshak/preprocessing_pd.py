@@ -16,6 +16,7 @@ def preprocessing_pd_report(data):
     data = normalization(data)
     data = variable_dummification(data)
     data = balancing(data)
+    data = feature_selection(data)
     
     print("Final shape:", data.shape)
     return "-- End of report --"
@@ -132,7 +133,7 @@ def balancing(data):
         return df_SMOTE
             
     else:
-        print("b) Dataset is already balanced.")
+        print("b) Dataset was already balanced.")
     
     return data
     
