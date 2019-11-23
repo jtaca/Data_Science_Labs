@@ -1070,21 +1070,21 @@ def report(source, dataframe, task):
 if __name__ == '__main__':
 
     '''A: read arguments'''
-    #args = sys.stdin.readline().rstrip('\n').split(' ')
-    #n, source, task = int(args[0]), args[1], args[2]
+    args = sys.stdin.readline().rstrip('\n').split(' ')
+    n, source, task = int(args[0]), args[1], args[2]
     
     '''B: read dataset'''
-    #data, header = [], sys.stdin.readline().rstrip('\r\n').split(',')
+    data, header = [], sys.stdin.readline().rstrip('\r\n').split(',')
     
-    #for i in range(n-1):
-    #    data.append(sys.stdin.readline().rstrip('\r\n').split(','))
+    for i in range(n-1):
+        data.append(sys.stdin.readline().rstrip('\r\n').split(','))
     ## Tudo forcado a ser float64 pois eram objetos
-    #dataframe = pd.DataFrame(data, columns=header, dtype=float)
+    dataframe = pd.DataFrame(data, columns=header, dtype=float)
     
     #dataframe = pd.read_csv('pd_speech_features.csv', sep=',')
-    dataframe = pd.read_csv('convAfterUndersampling.csv', sep=',')
-    task = "classification"
-    source = "CT"
+    #dataframe = pd.read_csv('convAfterUndersampling.csv', sep=',')
+    #task = "classification"
+    #source = "CT"
     
     
     '''C: output results'''
