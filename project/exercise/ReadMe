@@ -1,0 +1,2 @@
+In this tests we did not include iterations. We did this wrongly as the optimal parameters vary greatly with the provided dataset.
+We provided only fixed values for previewsly used data wich we understand is wrong but only found out too late.
