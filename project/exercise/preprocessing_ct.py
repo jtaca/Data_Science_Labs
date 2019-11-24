@@ -8,6 +8,16 @@ from imblearn.over_sampling import SMOTE, RandomOverSampler
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.feature_selection import SelectFromModel
 
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import confusion_matrix
+from sklearn.neighbors import KNeighborsClassifier
+import sklearn.metrics as metrics
+from sklearn.tree import DecisionTreeClassifier
+import xgboost as xgb
+from imblearn.under_sampling import RandomUnderSampler
+from collections import Counter
+from sklearn.ensemble import RandomForestClassifier
+
 def preprocessing_ct_report(data):
     print("-- Report start --")
     print("Initial shape:", data.shape)
@@ -116,14 +126,13 @@ def balancing(data):
         df2 = pd.DataFrame(y_res, columns=['Cover_Type'])
         data = pd.concat([data, df2], axis=1)
         
-        values['Under'] = [smote_target_count.values[ind_min_class], smote_target_count.values[1-ind_min_class]]
         
         print("b) Balanced dataset options:")
         for a in values:
             print('-', a, values[a])
 
         print("c) Dataset balanced using SMOTE.")
-        return df_SMOTE
+        return data
             
     else:
         print("b) Dataset was already balanced.")
@@ -151,7 +160,7 @@ def feature_selection(data):
     print("Original data shape:",X.shape,"\nNew data shape:",X_new.shape)
     df2 = pd.DataFrame(y, columns=['Cover_Type'])
 
-    column_names = result.columns[model.get_support()]
+    column_names = data.columns[model.get_support()]
     df1 = pd.DataFrame(X_new, columns=column_names)
     print(df1)
 
